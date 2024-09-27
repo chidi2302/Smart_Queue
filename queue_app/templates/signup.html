@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    <style>
+        body{
+    background-color:purple;
+   }
+   .containerr{
+        background-color: whitesmoke;
+        width: 70%;
+        margin: 3% 15%;
+        padding:0%;
+        border: 3px solid purple;
+        box-shadow: 0 20px 10px rgb(130, 55, 129);
+        border-radius: 17px;
+        /*text-align: center; */
+    } 
+    .button{
+    display: inline-block;
+    background-color:purple;
+    color: #f7f0f2fe;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 18px 5px;
+    transition: background-color 0.3s, color 0.3s;
+    
+    }
+    
+    input{
+        width: 350px;
+        height: 40px;
+    }
+    .logo{
+        margin-top: auto;
+        color: white;
+    }
+    h2{
+        text-align: center;
+    }
+    form{
+        margin: 12px;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <h2 class="logo">QueueSmart</h2>
+    <div id="backgroundSlideshow"></div>
+    <div class="containerr">
+    <h2><u>Sign Up</u></h2>
+    <hr/>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+    <footer>
+        <div class="container">
+      
+            <p class="copyright">&copy; 2024 QueueSmart. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+

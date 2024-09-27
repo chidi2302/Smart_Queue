@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+   body{
+    background-color:purple;
+   }
+   .containerr{
+        background-color: whitesmoke;
+        width: 400px;
+        margin: 10% 37%;
+        padding:20px;
+        border: 3px solid purple;
+        box-shadow: 0 20px 10px rgb(91, 42, 136);
+        border-radius: 17px;
+        /*text-align: center; */
+    } 
+    .button{
+    display: inline-block;
+    background-color: purple;
+    color: #f7f0f2fe;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 18px 5px;
+    transition: background-color 0.3s, color 0.3s;
+    
+    }
+    
+    input{
+        width: 350px;
+        height: 40px;
+    }
+    .logo{
+        margin-top: auto;
+        color: white;
+    }
+    h2{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h2 class="logo">QueueSmart</h2>
+    <div id="backgroundSlideshow"></div>
+    <div class="containerr">
+    
+    <h2><u>Login</u></h2>
+    <hr/>
+    <form method="POST">
+        {% csrf_token %}
+       <!---{{ form.as_p }} -->
+       <label for="service"><b>Username:</b></label>
+       <input type="text" name="username", placeholder="Username" required width="100">
+       <br/>
+       <br/>
+       <label for="service"><b>password:</b></label>
+       <input type="password" name="password" placeholder="password" required>
+       <br/> 
+       <button type="submit" class="button">Login</button>
+    </form>
+    <br/>
+    <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
+    
+    </div>
+    <footer>
+        <div class="container">
+         
+       
+            <p class="copyright">&copy; 2024 QueueSmart. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<!-- booking/templates/booking/real_time_queuing_status.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Queuing Status</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+                body{
+    background-color:purple;
+   }
+       .logo{
+        margin-top: auto;
+        color: white;
+    }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            color: #dddddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: black;
+        }
+        h1{
+        text-align: center;
+        color: #dddddd;
+    }
+    </style>
+</head>
+<body>
+    <h2 class="logo">QueueSmart</h2>
+    <h1><u>Real-Time Queuing Status</u></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>Total Bookings</th>
+                <th>Available Slots</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for status in queuing_status %}
+                <tr>
+                    <td>{{ status.service.name }}</td>
+                    <td>{{ status.total_bookings }}</td>
+                    <td>{{ status.available_slots }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">No services available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <footer>
+        <div class="container">
+            <a href="{% url 'index' %}" class="home-link">Home</a>
+            <a href="{% url 'logout' %}" class="home-link">Logout</a>
+            <p class="copyright">&copy; 2024 QueueSmart. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

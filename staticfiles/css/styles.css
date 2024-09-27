@@ -1,0 +1,411 @@
+/* Base styles */
+body {
+    display:flex;
+    margin: auto;
+    min-height:100vh;
+    font-family: Arial, sans-serif;
+    color:#333 ;
+    line-height: 1.9;
+    flex-direction:column;
+   
+} 
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    background-color:transparent;
+  /*  color:white; */
+  /*  -webkit-text-stroke: 1px black; /* Webkit/Blink browsers */
+   /* text-stroke: 6px black; */
+}
+
+/* Header styles */
+header {
+    background:purple;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.heading{
+    color:purple;
+    -webkit-text-stroke: 2px black; /* Webkit/Blink browsers */
+    /*text-stroke: 1px black; */
+    }
+
+.heading2{
+    color:white;
+    -webkit-text-stroke: 2px purple; /* Webkit/Blink browsers */
+    /*text-stroke: 1px black; */
+   }  
+      
+.logo {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position:relative;
+    display: inline-block;
+    
+}
+
+.dropbtn {
+    background-color: #fff;
+    color: purple;
+    padding: 10px 13px;
+    font-size: 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-size:10px;
+    display:block;
+    margin-top:-5px;
+    margin-left:-40px; 
+    }
+
+.dropbtn:hover{
+   background-color: purple;
+    color: #fff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#fff ; /* White background */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10px;
+    right:-50px;
+ 
+}
+
+.dropdown-content a {
+    color: purple; /* Red text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    }
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+ 
+}
+
+.dropdown:hover .dropbtn {
+    background-color:purple; /* Darker red background on hover */
+    
+}
+
+/* Hero section */
+.hero {
+   /* background: #fff; */
+    padding: 60px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+#backgroundSlideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure the slideshow is behind other content */
+   /* height: calc(100vh - 0px); */
+   opacity: 0.5;
+   
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: purple;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Features, How It Works, Contact, Services sections */
+.features, .how-it-works, .contact, .services {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.features .feature-item, .services ul li {
+    margin: 20px 0;
+}
+
+.features .feature-item h3, .services ul li a {
+    color: purple;
+}
+
+.services ul {
+    list-style: none;
+    padding: 0;
+    margin:auto;
+    
+}
+
+.services ul li {
+    margin: 10px 0;
+}
+
+.services ul li a {
+    color: purple;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.services ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: purple;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top:80px; 
+}
+
+/* Buttons */
+.home-link, .back-link {
+    display: flexbox;
+    background-color: #fff;
+    color: purple;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 10px;
+    margin: 0 7px;
+    transition: background-color 0.3s, color 0.3s;
+    float:left;
+}
+
+.home-link:hover, .back-link:hover {
+    background-color:purple;
+    color: #fff;
+}
+
+#home{
+    margin-left:20px;
+}
+.copyright{
+    display:inline-block;
+}
+
+ .containerr{
+    background-color: whitesmoke;
+    width: 30px;
+    margin:auto;
+    padding:20px;
+    border: 1px solid purple;
+    box-shadow: 0 20px 10px rgb(78, 76, 76);
+    /*text-align: center; */
+} 
+
+/* Media Queries */
+
+/* Tablets and small desktops (768px and up) */
+@media (min-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    
+    nav ul {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .logo {
+        float: none;
+        display: block;
+        text-align: center;
+        font-size:50px;
+    }
+    footer{
+        margin-top:100%;
+        background: purple;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    }
+    
+    .dropbtn {
+    background-color: #fff;
+    color: purple;
+    padding: 10px 13px;
+    font-size: 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-size:25px;
+    display:block;
+    margin-top:-1px;
+    margin-bottom:50px;
+    margin-left:20px; 
+    }
+    
+    .home-link, .back-link {
+    display: flexbox;
+    background-color: #fff;
+    color: purple;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 25px;
+    margin: 0 7px;
+    transition: background-color 0.3s, color 0.3s;
+    float:left;
+    font-size:40px;
+}
+
+.services,.how-it-works,.contact{
+    font-size:40px;
+}
+.services ul li a{
+    font-size:40px;
+}
+.dropbtn{
+    font-size:40px;
+}
+.dropdown-content a{
+    font-size:40px;
+}
+.container h1{
+    font-size:70px;
+    
+}
+.container p{
+    font-size:40px;
+}
+.cta-button{
+    font-size:40px;
+    
+}
+footer{
+    margin-top:90px;
+}
+ .home-link{
+        margin-bottom: -32px;
+    }
+}
+
+/* Mobile devices (up to 767px) */
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+    }
+
+    nav ul {
+        float: none;
+        text-align: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+    footer{
+        
+        background:purple;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    }
+    #backgroundSlideshow {
+   
+  
+   
+    background-size: cover;
+    background-position: center;
+    /* Ensure the slideshow is behind other content */
+    
+}
+footer{
+    margin-top:70px;
+}
+}  
+
+@media (min-width: 1200px) {
+    #backgroundSlideshow{
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        position:absolute;
+        margin-top: 100px;
+    
+    }
+    footer{
+        margin-top:100%;
+        background: purple;
+    color: #fff;
+    text-align: center;
+    padding: auto 0;
+    margin-top: 60px;
+}
+    .home-link{
+        margin-bottom: -32px;
+    }
+
+}

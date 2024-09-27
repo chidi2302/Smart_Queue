@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - QueueSmart</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">QueueSmart</div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}" class="home-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'features' %}">Features</a>
+                            <a href="{% url 'how_it_works' %}">How It Works</a>
+                            <a href="{% url 'contact' %}">Contact</a>
+                            <a href="{% url 'services' %}">Services</a>
+                            <a href="{% url 'about' %}">About Creators</a>
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <p>Our smart queue management system uses advanced algorithms to streamline the queue process, ensuring a smooth experience for both customers and bank staff,Our innovative system is designed to reduce wait times and eliminate the stress of long queues by allowing customers to book appointments before visiting busy locations like banks, hospitals, and government offices.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="{% url 'index' %}" class="home-link">Home</a>
+            <a href="{% url 'index' %}" class="back-link">Back</a>
+            <p class="copyright">&copy; 2024 QueueSmart. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

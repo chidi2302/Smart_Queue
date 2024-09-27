@@ -1,0 +1,102 @@
+<!-- booking/templates/booking/book_slot.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Slot</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body{
+    background-color:purple;
+   }
+   .containerr{
+        background-color: whitesmoke;
+        width: 500px;
+        margin: 7% 32%;
+        padding:0%;
+        border: 3px solid purple;
+        box-shadow: 0px 20px 10px rgb(200, 127, 127);
+        border-radius: 17px;
+        justify-content: center;
+        /*text-align: center; */
+    } 
+    .button{
+    display: inline-block;
+    background-color: purple;
+    color: #f7f0f2fe;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 18px 5px;
+    transition: background-color 0.3s, color 0.3s;
+    
+    }
+    
+    input{
+        width: 350px;
+        height: 40px;
+    }
+    .logo{
+        margin-top: auto;
+        color: white;
+    }
+    h1{
+        text-align: center;
+    }
+    form{
+        margin: 12px;
+        color: black;
+    }
+    .message{
+        color: red;
+    }
+ </style>
+</head>
+<body>	
+    <h2 class="logo">QueueSmart</h2>
+    <div id="backgroundSlideshow"></div>
+    <div class="containerr">
+    <h1><u>Book a Slot</u></h1>
+    <hr/>
+    <form method="post">
+        {% csrf_token %}
+        <label for="service">Select Service: </label>
+        <select name="service" id="service">
+            {% for service in services %}
+                <option value="{{ service.id }}">{{ service.name }}</option>
+            {% endfor %}
+        </select>
+        <br/>
+        <br/>
+        <label for="date">Select Date:</label>
+        <input type="date" name="date" id="date" required>
+        <br/>
+        <br/>
+        <label for="time">Select Time:</label>
+        <select name="time" id="time">
+            {% for slot in time_slots %}
+                <option value="{{ slot }}">{{ slot }}</option>
+            {% endfor %}
+        </select>
+        <br/>
+        <button type="submit" class="button">Book Slot</button>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    </div>
+    <footer>
+        <div class="container">
+            <a href="{% url 'services' %}" class="home-link">Back</a>
+            <p class="copyright">&copy; 2024 QueueSmart. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

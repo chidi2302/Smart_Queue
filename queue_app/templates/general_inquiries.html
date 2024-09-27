@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General inquiries Queue - QueueSmart</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        .queue-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .time-slot {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .time-slot label {
+            margin-left: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .time-slot input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .submit-button {
+            background-color: #c8102e;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #a00e1f;
+        }
+         @media (min-width: 768px) {
+          footer{
+            margin-top:70%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">QueueSmart</div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}" class="home-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'features' %}">Features</a>
+                            <a href="{% url 'how_it_works' %}">How It Works</a>
+                            <a href="{% url 'contact' %}">Contact</a>
+                            <a href="{% url 'services' %}">Services</a>
+                            <a href="{% url 'about' %}">About Creators</a>
+                            <a href="{% url 'general_inquiries' %}">Account inquiries Queue</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="queue-container">
+        <h2>Select a Time Slot for General inquiries</h2>
+        <form>
+            <div class="time-slot">
+                <input type="radio" id="time-7am" name="time-slot" value="7am">
+                <label for="time-7am">7:00 AM</label>
+            </div>
+            <div class="time-slot">
+                <input type="radio" id="time-8am" name="time-slot" value="8am">
+                <label for="time-8am">8:00 AM</label>
+            </div>
+            <div class="time-slot">
+                <input type="radio" id="time-9am" name="time-slot" value="9am">
+                <label for="time-9am">9:00 AM</label>
+            </div>
+            <div class="time-slot">
+                <input type="radio" id="time-10am" name="time-slot" value="10am">
+                <label for="time-10am">10:00 AM</label>
+            </div>
+            <div class="time-slot">
+                <input type="radio" id="time-11am" name="time-slot" value="11am">
+                <label for="time-11am">11:00 AM</label>
+            </div>
+            <div class="time-slot">
+                <input type="radio" id="time-12pm" name="time-slot" value="12pm">
+                <label for="time-12pm">12:00 PM</label>
+            </div>
+            <div class="time-slot">
+                <input type="radio" id="time-1pm" name="time-slot" value="1pm">
+                <label for="time-1pm">1:00 PM</label>
+            </div>
+            <div class="time-slot">
+                <input type="radio" id="time-2pm" name="time-slot" value="2pm">
+                <label for="time-2pm">2:00 PM</label>
+            </div>
+            <div class="time-slot">
+                <input type="radio" id="time-3pm" name="time-slot" value="3pm">
+                <label for="time-3pm">3:00 PM</label>
+            </div>
+            <button type="submit" class="submit-button">Confirm</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="{% url 'index' %}" class="home-link">Home</a>
+            <a href="{% url 'services' %}" class="back-link">Back</a>
+            <p class="copyright">&copy; 2024 QueueSmart. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

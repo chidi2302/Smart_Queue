@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - QueueSmart</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">QueueSmart</div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}"class="home-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'view_available_queues' %}">Available Queues</a>
+                            <a href="{% url 'features' %} ">Features</a>
+                            <a href="{% url 'how_it_works' %}">How It Works</a>
+                            <a href="{% url 'contact' %}">Contact</a>
+                            <a href="{% url 'services' %}">Services</a>
+                            <a href="{% url 'about' %}">About Creators</a>
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="services">
+        <div class="container">
+            <h2>Select the Service You Want to Queue For </a></h2>
+            <a href="{% url 'book_slot' %}" class="cta-button"><b>Select</b></a>
+            <h2>Check Real-Time Queueing Status</a></h2>
+            <a href="{% url 'real_time_queuing_status' %}" class="cta-button"><b>Select</b></a>
+            <!--<ul>
+                <li><a href="{% url 'withdrawal_queue' %}">Withdrawal</a></li>
+                <li><a href="{% url 'deposit_queue' %}">Deposit</a></li>
+                <li><a href="{% url 'atm_queue' %}">ATM Services</a></li>
+                <li><a href="{% url 'general_inquiries' %}">General inquiries</a></li>
+            </ul> -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="{% url 'index' %}" class="home-link">Home</a>
+            <a href="{% url 'index' %}" class="back-link">Back</a>
+            <p class="copyright">&copy; 2024 QueueSmart. All rights reserved.</p>
+        </div>
+    </footer>
+   
+</body>
+</html>

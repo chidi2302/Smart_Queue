@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - QueueSmart</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">QueueSmart</div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}" class="home-link" id="home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'features' %}">Features</a>
+                            <a href="{% url 'how_it_works' %}">How It Works</a>
+                            <a href="{% url 'contact' %}">Contact</a>
+                            <a href="{% url 'about' %}">About Creators</a>
+                            <a href="{% url 'services' %}">Services</a>
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature-item">
+                <h3>Real-time Updates</h3>
+                <p>Monitor and manage queue status in real-time.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Automated Alerts</h3>
+                <p>Receive notifications for queue status changes.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Efficient Management</h3>
+                <p>Optimize staff allocation and reduce wait times.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="{% url 'index' %}" class="home-link">Home</a>
+            <a href="{% url 'index' %}" class="back-link">Back</a>
+            <p class="copyright">&copy; 2024 QueueSmart. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

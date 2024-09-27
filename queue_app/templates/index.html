@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Queue Management System</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        footer{
+            margin-top: -2%; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">QueueSmart</div>
+            <nav>
+                <ul>
+                    <!--<li><a href="index.html" class="home-link">Home</a></li> -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu</a>
+                        <p>Welcome <b>{{ user.username }}</b></p>
+                        <div class="dropdown-content">
+                            <a href="{% url 'real_time_queuing_status' %}">Queueing Status</a>
+                            <a href="{% url 'features' %}">Features</a>
+                            <a href="{% url 'how_it_works' %}">How It Works</a>
+                            <a href="{% url 'contact' %}">Contact</a>
+                            <a href="{% url 'services' %}">Services</a>
+                             <a href="{% url 'about' %}">About Creators</a>
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="backgroundSlideshow"></div>
+    <section class="hero">
+          <!--  <div id="backgroundSlideshow"></div> -->
+            
+  <!-- <div class="container"> </div>
+  -->      <div class="container">
+      
+            <h1 class="heading">Welcome to QueueSmart</h1>
+            <p class="heading2"><b><large>Revolutionizing the way banks manage queues in Nigeria.</large></b></p>
+            <a href="{% url 'services' %}" class="cta-button"><b>Get Started</b></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="{% url 'index' %}" class="home-link">Home</a>
+            <a href="{% url 'logout' %}" class="home-link">Logout</a>
+            <p class="copyright">&copy; 2024 QueueSmart. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+   
+</body>
+</html>
