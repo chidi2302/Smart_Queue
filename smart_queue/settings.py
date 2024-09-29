@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4ygj$g8)+$7ur)7ix@v&(entobte_c*y^2mj0&a7^ylf+q*%36'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [smart_queue.onrender.com]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -80,11 +80,7 @@ WSGI_APPLICATION = 'smart_queue.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':os.environ.get(DB_NAME),
-        'USER':os.environ.get(DB_USER),
-        'PASSWORD':os.environ.get(DB_PASSWORD),
-        'HOST':os.environ.get(DB_HOST),
-        'PORT':os.environ.get(DB_PORT),
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
 
