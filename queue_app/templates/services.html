@@ -21,7 +21,7 @@
                             <a href="{% url 'features' %} ">Features</a>
                             <a href="{% url 'how_it_works' %}">How It Works</a>
                             <a href="{% url 'contact' %}">Contact</a>
-                            <a href="{% url 'services' %}">Services</a>
+                            <a href="{% url 'services' %}">Go To Queue System</a>
                             <a href="{% url 'about' %}">About Creators</a>
                             <a href="{% url 'logout' %}">Logout</a>
                         </div>
@@ -33,10 +33,12 @@
 
     <section class="services">
         <div class="container">
-            <h2>Select the Service You Want to Queue For </a></h2>
+            <h2>Book Time Slot</a></h2>
             <a href="{% url 'book_slot' %}" class="cta-button"><b>Select</b></a>
             <h2>Check Real-Time Queueing Status</a></h2>
             <a href="{% url 'real_time_queuing_status' %}" class="cta-button"><b>Select</b></a>
+            <h2>Check Available Queues</h2>
+            <a href="{% url 'view_available_queues' %}"  class="cta-button"><b>Select</b></a>
             <!--<ul>
                 <li><a href="{% url 'withdrawal_queue' %}">Withdrawal</a></li>
                 <li><a href="{% url 'deposit_queue' %}">Deposit</a></li>
