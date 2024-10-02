@@ -140,7 +140,7 @@ nav ul li a {
     background-position: center;
     z-index: -1; /* Ensure the slideshow is behind other content */
    /* height: calc(100vh - 0px); */
-   opacity: 0.5;
+   opacity: 0.8;
    
 }
 

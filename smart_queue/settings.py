@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4ygj$g8)+$7ur)7ix@v&(entobte_c*y^2mj0&a7^ylf+q*%36'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['queue_app.onrender.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -45,13 +45,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMidddleware"
+    
 ]
 
 ROOT_URLCONF = 'smart_queue.urls'
@@ -122,11 +123,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static")
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -148,4 +151,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'danielchidiebere383@gmail.com'
 EMAIL_HOST_PASSWORD = 'your_password'
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
